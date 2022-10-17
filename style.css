@@ -5,8 +5,7 @@ body {
 .wrapper {
 	display: grid;
 	grid-template-columns: min(200px) 4fr;
-	grid-template-rows: max(160px) 5fr;
-	border: 3px solid red;
+	grid-template-rows: max(140px) 5fr;
 	height: 98vh;
 }
 
@@ -57,12 +56,12 @@ li {
 	grid-template: 1fr 1fr / 1fr 1fr;
 	align-items: end;
 	justify-items: end;
-	border: 3px solid green;
+	box-shadow: 0px 4px 6px rgb(178, 178, 178);
+	position: relative;
 }
 
 .search {
 	display: flex;
-	border: 1px solid blue;
 	margin-left: 20px;
 	margin-top: 20px;
 	width: clamp(250px, 100%, 550px);
@@ -82,7 +81,6 @@ input {
 }
 .account {
 	display: flex;
-	border: 1px solid blue;
 	align-items: center;
 	gap: 30px;
 	font-weight: 900;
@@ -100,7 +98,6 @@ input {
 .handle {
 	display: flex;
 	align-items: center;
-	border: 1px solid blue;
 	gap: 20px;
 	margin-left: 20px;
 	margin-bottom: 10px;
@@ -116,7 +113,6 @@ input {
 
 .buttons {
 	display: flex;
-	border: 1px solid blue;
 }
 
 .search, .account {
@@ -147,26 +143,51 @@ input {
 /* ----- MAIN BODY ----- */
 
 .main {
-	border: 2px solid pink;
 	display: grid;
-	grid-template: 1fr 1fr / 2fr 1fr;
-}
-.cards-container {
-	grid-row: 1 / 3;
-	border: 2px solid orange;
+	grid-template: 50px 35vh 35vh / 2fr 1fr;
 }
 
-.cards {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 16px;
+.your-projects {
+	margin-top: 20px;
+	margin-bottom: 8px;
 	margin-left: 14px;
 }
 
+.announce-header {
+	grid-area: 1 / 2 / 2 / 3;
+	margin-top: 20px;
+	margin-bottom: 8px;
+}
+
+.announcements-container {
+	grid-area: 2 / 2 / 3 / 3;
+	width: max(290px, 95%);
+	background-color: white;
+	padding: 0px;
+	margin-right: 16px;
+	border-radius: 6px;
+	box-shadow: 2px 4px 6px rgb(178, 178, 178);
+}
+
+.cards {
+	grid-area: 2 / 1 / 4 / 2;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	margin-left: 14px;
+	padding-bottom: 0;
+	align-items: center;
+	row-gap: 20px;
+	column-gap: -20px;
+}
+
 .card {
-	border: 1px solid green;
 	display: grid;
 	text-align: start;
+	background-color: white;
+	height: 170px; 
+	width: clamp(150px, 93%, 450px);
+	box-shadow: 2px 4px 6px rgb(178, 178, 178);
+	border-radius: 6px;
 }
 
 .project-icons {
@@ -175,4 +196,85 @@ input {
 
 .trending-container {
 	grid-column: 2 / 3;
+}
+
+.card>p {
+	margin: 0;
+	margin-left: 8px;
+	padding: 0px;
+}
+
+.card>:nth-child(1) {
+	align-self: center;
+}
+
+.card>:nth-child(2) {
+	font-size: small;
+}
+
+.title {
+	font-weight: 900;
+}
+
+.project-icons {
+	display: flex;
+	gap: 16px; 
+	margin-right: 16px;
+}
+
+.announcements>div {
+	margin-left: 16px;
+	border-bottom: 1px solid rgb(178, 178, 178);
+	margin-right: 16px;
+}
+
+.announcements>div>p {
+	margin: 0;
+}
+
+.announcements>div>:nth-child(1) {
+	align-self: center;
+	margin-top: 12px;
+	margin-bottom: 4px;
+	font-weight: 700;
+	font-size: small;
+}
+
+.announcements>div>:nth-child(2) {
+	font-size: 12px;
+	margin-bottom: 12px;
+}
+
+#last-announce {
+	border-bottom: none;
+}
+
+.trending-handles>div {
+	display: flex;
+	align-items: center;
+}
+
+.trending-handles>div>img {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	border: 1px solid rgb(88, 142, 201);
+}
+
+.trending-header {
+	margin-top: 24px;
+}
+
+.trending-handles {
+	margin-top: 12px;
+	margin-right: 16px;
+	background-color: white;
+	border-radius: 6px;
+	box-shadow: 2px 4px 6px rgb(178, 178, 178);
+	padding: 12px;
+}
+
+.trending-handles>div>p {
+	margin-left: 12px;
+	font-weight: 400;
 }
